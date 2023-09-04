@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assignment3.PassengerBookingController">
+   <children>
+      <Button layoutX="397.0" layoutY="270.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="141.0" text="Back to Homepage" />
+      <Text layoutX="132.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passenger Booking">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Text>
+      <Button layoutX="62.0" layoutY="270.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="141.0" text="Cancel Booking" />
+      <Button layoutX="397.0" layoutY="132.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="141.0" text="View Booking" />
+      <Button layoutX="62.0" layoutY="132.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="141.0" text="Enter Booking" />
+   </children>
+</Pane>
