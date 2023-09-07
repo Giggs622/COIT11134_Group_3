@@ -13,10 +13,10 @@ public class FirstClass extends Passenger
     private float firstClassBaggage;
     
     // Constructor
-    public FirstClass(int bookingID, LocalDate bookingDate, String bookingName, String bookingDOB, String bookingEmail, String bookingPhone, float firstClassBaggage)
+    public FirstClass(int bookingID, LocalDate bookingDate, String bookingName, String bookingDOB, String bookingEmail, String bookingPhone)
     {
         super(bookingID, bookingDate, bookingName, bookingDOB, bookingEmail, bookingPhone);
-        this.firstClassBaggage = firstClassBaggage;
+        this.firstClassBaggage = Values.FIRST_CLASS_BAGGAGE;
     }
 
     // First Class Baggage Getter and Setter

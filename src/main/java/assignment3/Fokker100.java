@@ -5,12 +5,10 @@
 
 package assignment3;
 
-import java.time.LocalDate;
-
 public class Fokker100 extends Plane
 {
     // Constructor
-    public Fokker100(LocalDate scheduleDate)    
+    public Fokker100(int scheduleDate)    
     {
         super(scheduleDate);
         super.setSeatsPassenger(Values.ECONOMY_SEATS_FOKKER);

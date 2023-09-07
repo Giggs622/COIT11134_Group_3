@@ -14,7 +14,7 @@ public class Boeing747 extends Plane
 
     // Constructor
 
-    public Boeing747(int seatsFirstClass, LocalDate scheduleDate)
+    public Boeing747(int scheduleDate)
     {
         super(scheduleDate);
         super.setSeatsPassenger(Values.ECONOMY_SEATS_BOEING);

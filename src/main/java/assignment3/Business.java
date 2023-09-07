@@ -13,10 +13,10 @@ public class Business extends Passenger
     private float businessBaggage;
     
     // Constructor
-    public Business(int bookingID, LocalDate bookingDate, String bookingName, String bookingDOB, String bookingEmail, String bookingPhone, float businessBaggage)
+    public Business(int bookingID, LocalDate bookingDate, String bookingName, String bookingDOB, String bookingEmail, String bookingPhone)
     {
         super(bookingID, bookingDate, bookingName, bookingDOB, bookingEmail, bookingPhone);
-        this.businessBaggage = businessBaggage;
+        this.businessBaggage = Values.BUSINESS_BAGGAGE;
     }
 
     // Business Baggage Getter and Setter

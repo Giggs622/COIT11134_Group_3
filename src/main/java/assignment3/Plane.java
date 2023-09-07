@@ -5,12 +5,10 @@
 
 package assignment3;
 
-import java.time.LocalDate;
-
 public class Plane 
 {
     // Instance Variables
-    private LocalDate scheduleDate;
+    private int scheduleDate;
     private int seatsTakenPassenger;
     private int seatsTakenBusiness;
     private int seatsTakenFirstClass;
@@ -19,7 +17,7 @@ public class Plane
     
     // Constructor
 
-    public Plane(LocalDate scheduleDate)
+    public Plane(int scheduleDate)
     {
         this.scheduleDate = scheduleDate;
         this.seatsTakenPassenger = 0;
@@ -29,12 +27,12 @@ public class Plane
     
 
     // Schedule Date Getter and Setter
-    public LocalDate getScheduleDate()
+    public int getScheduleDate()
     {
         return scheduleDate;
     }
 
-    public void setScheduleDate(LocalDate scheduleDate)
+    public void setScheduleDate(int scheduleDate)
     {
         this.scheduleDate = scheduleDate;
     }
