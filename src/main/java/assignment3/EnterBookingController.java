@@ -4,7 +4,7 @@
  */
 
 // Programmers: Lochlain Cathcart 12127289; Matt Jones S0201735; William Korger 12151970
-// File: EnterBooking2.java
+// File: EnterBooking1.java
 // Date: 4 Sept 2023
 // Purpose: COIT11134 Assignment 3
 
@@ -19,7 +19,7 @@ import javafx.fxml.Initializable;
  *
  * @author Matt6
  */
-public class EnterBooking2Controller implements Initializable
+public class EnterBookingController implements Initializable
 {
 
     /**

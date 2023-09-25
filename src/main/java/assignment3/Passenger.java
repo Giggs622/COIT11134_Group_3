@@ -5,27 +5,27 @@
 
 package assignment3;
 
-import java.time.LocalDate;
-
 public class Passenger 
 {
     // Instance Variables
     private int bookingID;
-    private LocalDate bookingDate;
+    private String bookingDate;
     private String bookingName;
-    private String bookingDOB;
     private String bookingEmail;
     private String bookingPhone;
+    private String bookingClass;
+    private String bookingDestination;
     
     // Contructor
-    public Passenger(int bookingID, LocalDate bookingDate, String bookingName, String bookingDOB, String bookingEmail, String bookingPhone)
+    public Passenger(int bookingID, String bookingDate, String bookingName, String bookingEmail, String bookingPhone, String bookingClass, String bookingDestination)
     {
         this.bookingID = bookingID;
         this.bookingDate = bookingDate;
         this.bookingName = bookingName;
-        this.bookingDOB = bookingDOB;
         this.bookingEmail = bookingEmail;
         this.bookingPhone = bookingPhone;
+        this.bookingClass = bookingClass;
+        this.bookingDestination = bookingDestination;
     }
 
     // Booking ID Getter and Setter
@@ -40,12 +40,12 @@ public class Passenger
     }
 
     // Booking Date Getter and Setter
-    public LocalDate getBookingDate()
+    public String getBookingDate()
     {
         return bookingDate;
     }
 
-    public void setBookingDate(LocalDate bookingDate)
+    public void setBookingDate(String bookingDate)
     {
         this.bookingDate = bookingDate;
     }
@@ -59,17 +59,6 @@ public class Passenger
     public void setBookingName(String bookingName)
     {
         this.bookingName = bookingName;
-    }
-
-    // Booking Date of Birth Getter and Setter
-    public String getBookingDOB()
-    {
-        return bookingDOB;
-    }
-
-    public void setBookingDOB(String bookingDOB)
-    {
-        this.bookingDOB = bookingDOB;
     }
 
     // Booking Email Address Getter and Setter
@@ -94,11 +83,33 @@ public class Passenger
         this.bookingPhone = bookingPhone;
     }
 
+    // Booking Class Getter and Setter
+    public String getBookingClass()
+    {
+        return bookingClass;
+    }
+
+    public void setBookingClass(String bookingClass)
+    {
+        this.bookingClass = bookingClass;
+    }
+
+    // Booking Destination Getter and Setter
+    public String getBookingDestination()
+    {
+        return bookingDestination;
+    }
+
+    public void setBookingDestination(String bookingDestination)
+    {
+        this.bookingDestination = bookingDestination;
+    }
+    
     // Print object
     @Override
     public String toString()
     {
-        return "Passenger{" + "bookingID=" + bookingID + ", bookingDate=" + bookingDate + ", bookingName=" + bookingName + ", bookingDOB=" + bookingDOB + ", bookingEmail=" + bookingEmail + ", bookingPhone=" + bookingPhone + '}';
+        return String.format("%s,%s,%s,%s,%s,%s,%s,", bookingID, bookingDate, bookingName, bookingEmail, bookingPhone, bookingClass, bookingDestination);
     }
     
 }
