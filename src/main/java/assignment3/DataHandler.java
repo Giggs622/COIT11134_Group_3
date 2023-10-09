@@ -18,7 +18,7 @@ public class DataHandler
     private ArrayList<Passenger> passengerList;
 
     // Constructor
-    public DataHandler() throws FileNotFoundException
+    public DataHandler(String passengertxt) throws FileNotFoundException
     {
         this.passengerList = new ArrayList<Passenger>();
         readDataFilePassenger();
