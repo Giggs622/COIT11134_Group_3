@@ -109,7 +109,7 @@ public class Passenger
     @Override
     public String toString()
     {
-        return String.format("%s,%s,%s,%s,%s,%s,%s,", bookingID, bookingDate, bookingName, bookingEmail, bookingPhone, bookingClass, bookingDestination);
+        return String.format( bookingID + "/ Date: " + bookingDate + " /" + bookingName + " " + bookingEmail + " " + bookingPhone + " Class: " + bookingClass + " Destination: " + bookingDestination);
     }
     
 }

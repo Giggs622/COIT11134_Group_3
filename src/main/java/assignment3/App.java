@@ -1,8 +1,3 @@
-// Programmers: Lochlain Cathcart 12127289; Matt Jones S0201735; William Korger 12151970
-// File: App.java
-// Date: 4 Sept 2023
-// Purpose: COIT11134 Assignment 3
-
 package assignment3;
 
 import javafx.application.Application;
@@ -13,31 +8,74 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-/**
- * JavaFX App
- */
 public class App extends Application {
 
-    private static Scene scene;
+    private static Scene sceneMain;
+    private static Scene sceneEnter;
+    private static Scene sceneCancel;
+    private static Scene sceneView;
+
+    private static Stage stage;
+    private static DataHandler data;
 
     @Override
-    public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("homepage"), 640, 480);
-        stage.setScene(scene);
+    public void start(Stage primaryStage) throws IOException {
+        // Instantiate the DataHandler object
+        data = new DataHandler("passenger.txt");
+
+        // Create scenes
+        try {
+            Parent rootMain = FXMLLoader.load(getClass().getResource("passengerBooking.fxml"));
+            Parent rootEnter = FXMLLoader.load(getClass().getResource("enterBooking.fxml"));
+            Parent rootView = FXMLLoader.load(getClass().getResource("viewBooking.fxml"));
+            Parent rootCancel = FXMLLoader.load(getClass().getResource("cancelBooking.fxml"));
+
+            sceneMain = new Scene(rootMain);
+            sceneEnter = new Scene(rootEnter);
+            sceneView = new Scene(rootView);
+            sceneCancel = new Scene(rootCancel);
+        } catch (IOException e) {
+            // Handle any potential FXML loading exceptions here
+            e.printStackTrace();
+        }
+
+        stage = primaryStage;
+        // Set the current scene to the main scene
+        stage.setScene(sceneMain);
         stage.show();
     }
 
-    static void setRoot(String fxml) throws IOException {
-        scene.setRoot(loadFXML(fxml));
+    // Method for passing a reference to the data object
+    public static DataHandler getDataHandler() {
+        return data;
     }
 
-    private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
-        return fxmlLoader.load();
+    // Method for switching scenes
+    public static void changeScene(int sc) {
+        switch (sc) {
+            case 0:
+                stage.setScene(sceneMain);
+                break;
+            case 1:
+                stage.setScene(sceneEnter);
+                break;
+            case 2:
+                stage.setScene(sceneView);
+                break;
+            case 3:
+                stage.setScene(sceneCancel);
+                break;
+            default:
+                break;
+        }
+    }
+
+    // Method for exiting the application
+    public static void exit() {
+        stage.close();
     }
 
     public static void main(String[] args) {
-        launch();
+        launch(args);
     }
-
 }
