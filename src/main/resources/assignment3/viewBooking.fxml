@@ -28,8 +28,8 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextArea fx:id = "textArea" prefHeight="53.0" prefWidth="293.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button fx:id="backButton" onAction="#handleBackButton" mnemonicParsing="false" prefHeight="45.0" prefWidth="151.0" text="Back to Homepage" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextArea fx:id="textArea" editable="false" prefHeight="53.0" prefWidth="293.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="45.0" prefWidth="151.0" text="Back to Homepage" GridPane.columnIndex="1" GridPane.rowIndex="2" />
          </children>
       </GridPane>
    </children>

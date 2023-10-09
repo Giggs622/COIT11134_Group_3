@@ -18,7 +18,7 @@ public class DataHandler
     private ArrayList<Passenger> passengerList;
 
     // Constructor
-    public DataHandler(String passengertxt) throws FileNotFoundException
+    public DataHandler() throws FileNotFoundException
     {
         this.passengerList = new ArrayList<Passenger>();
         readDataFilePassenger();
@@ -81,7 +81,7 @@ public class DataHandler
 
             for (Passenger curPassenger : passengerList)
             {
-                out.format("%s\n", curPassenger.toString());
+                out.format("%s\n", curPassenger.fileSavePrint());
             }
 
             out.close();//close file
@@ -96,5 +96,11 @@ public class DataHandler
     public void addPassenger(Passenger p)
     {
         passengerList.add(p);
+    }
+    
+    // Method to get the ArrayList passengerList
+    public ArrayList<Passenger> getArrayList()
+    {
+        return passengerList;
     }
 }

@@ -21,7 +21,7 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         // Instantiate the DataHandler object
-        data = new DataHandler("passenger.txt");
+        data = new DataHandler();
 
         // Create scenes
         try {

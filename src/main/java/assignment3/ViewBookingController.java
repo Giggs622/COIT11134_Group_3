@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,6 +16,9 @@ import javafx.scene.text.Text;
 
 public class ViewBookingController implements Initializable {
 
+    //private DataHandler datahandler;
+    //private ArrayList<Passenger> passengerList;
+    
     @FXML
     private TextArea textArea;
 
@@ -23,7 +27,7 @@ public class ViewBookingController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // Read the "passenger.txt" file and display its content in the TextArea
+        /* Read the "passenger.txt" file and display its content in the TextArea
         try (BufferedReader reader = new BufferedReader(new FileReader("passenger.txt"))) {
             StringBuilder content = new StringBuilder();
             String line;
@@ -33,7 +37,9 @@ public class ViewBookingController implements Initializable {
             textArea.setText(content.toString());
         } catch (IOException ex) {
             System.err.println("Error reading the file: " + ex.getMessage());
-        }
+        }*/
+        // Create object reference to datahandler in main class
+        //datahandler = App.getDataHandler();
     }
 
     @FXML
@@ -43,5 +49,22 @@ public class ViewBookingController implements Initializable {
         App.changeScene(0);
         
         textArea.clear();
+    }
+    
+    // Read stored passenger records and print to text area
+    public static void printRecords(ArrayList<Passenger> passengerList)
+    {
+        // Create object reference to datahandler in main class
+        //datahandler = App.getDataHandler();
+        //passengerList = data.getArrayList();
+        
+        // Print the bookings to the text area
+        StringBuilder content = new StringBuilder("");
+        for (Passenger p : passengerList)
+        {
+            content.append(p.toString()).append("\n");
+        }
+        System.out.println(content.toString());
+        textArea.setText(content.toString());
     }
 }

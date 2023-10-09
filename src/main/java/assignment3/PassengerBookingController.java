@@ -23,10 +23,14 @@ public class PassengerBookingController implements Initializable {
     @FXML
     private Button exitButton;
     
+    private DataHandler data;
+    //private ViewBookingController view;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // Initialize controller here
+        // Initialize ViewBooking controller
+        data = App.getDataHandler();
+        //view = new ViewBookingController();
     }
 
     @FXML
@@ -39,6 +43,8 @@ public class PassengerBookingController implements Initializable {
     @FXML
     private void handleViewBooking(ActionEvent event) {
         System.out.println("View Bookings");
+        // Get passenger recorders and print to text area
+        ViewBookingController.printRecords(data.getArrayList());
         // Switch to the View Booking scene
         App.changeScene(2);
     }

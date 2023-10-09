@@ -112,4 +112,9 @@ public class Passenger
         return String.format( bookingID + "/ Date: " + bookingDate + " /" + bookingName + " " + bookingEmail + " " + bookingPhone + " Class: " + bookingClass + " Destination: " + bookingDestination);
     }
     
+    // Print object to String in correct format to save to file
+    public String fileSavePrint()
+    {
+        return String.format("%d,%s,%s,%s,%s,%s,%s,", bookingID, bookingDate, bookingName, bookingEmail, bookingPhone, bookingClass, bookingDestination);
+    }
 }
