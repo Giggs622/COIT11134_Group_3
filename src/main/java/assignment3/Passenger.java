@@ -5,8 +5,9 @@
 
 package assignment3;
 
-public class Passenger 
+public class Passenger
 {
+
     // Instance Variables
     private int bookingID;
     private String bookingDate;
@@ -15,7 +16,7 @@ public class Passenger
     private String bookingPhone;
     private String bookingClass;
     private String bookingDestination;
-    
+
     // Contructor
     public Passenger(int bookingID, String bookingDate, String bookingName, String bookingEmail, String bookingPhone, String bookingClass, String bookingDestination)
     {
@@ -104,17 +105,19 @@ public class Passenger
     {
         this.bookingDestination = bookingDestination;
     }
-    
+
     // Print object
     @Override
     public String toString()
     {
-        return String.format( bookingID + "/ Date: " + bookingDate + " /" + bookingName + " " + bookingEmail + " " + bookingPhone + " Class: " + bookingClass + " Destination: " + bookingDestination);
+        return String.format("Booking #: %d; Booking Date: %s; Name: %s; Email: %s; Phone: %s; Class: %s; Destination: %s",
+                bookingID, bookingDate, bookingName, bookingEmail, bookingPhone, bookingClass, bookingDestination);
     }
-    
+
     // Print object to String in correct format to save to file
     public String fileSavePrint()
     {
-        return String.format("%d,%s,%s,%s,%s,%s,%s,", bookingID, bookingDate, bookingName, bookingEmail, bookingPhone, bookingClass, bookingDestination);
+        return String.format("%d,%s,%s,%s,%s,%s,%s,",
+                bookingID, bookingDate, bookingName, bookingEmail, bookingPhone, bookingClass, bookingDestination);
     }
 }

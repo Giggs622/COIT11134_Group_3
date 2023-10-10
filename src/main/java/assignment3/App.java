@@ -1,3 +1,8 @@
+// Programmers: Lochlain Cathcart 12127289; Matt Jones S0201735; William Korger 12151970
+// File: App.java
+// Date: 7 Sept 2023
+// Purpose: COIT11134 Assignment 3
+
 package assignment3;
 
 import javafx.application.Application;
@@ -8,7 +13,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class App extends Application {
+public class App extends Application
+{
 
     private static Scene sceneMain;
     private static Scene sceneEnter;
@@ -19,22 +25,24 @@ public class App extends Application {
     private static DataHandler data;
 
     @Override
-    public void start(Stage primaryStage) throws IOException {
+    public void start(Stage primaryStage) throws IOException
+    {
         // Instantiate the DataHandler object
         data = new DataHandler();
 
         // Create scenes
-        try {
+        try
+        {
             Parent rootMain = FXMLLoader.load(getClass().getResource("passengerBooking.fxml"));
             Parent rootEnter = FXMLLoader.load(getClass().getResource("enterBooking.fxml"));
-            //Parent rootView = FXMLLoader.load(getClass().getResource("viewBooking.fxml"));
             Parent rootCancel = FXMLLoader.load(getClass().getResource("cancelBooking.fxml"));
 
             sceneMain = new Scene(rootMain);
             sceneEnter = new Scene(rootEnter);
-            //sceneView = new Scene(rootView);
             sceneCancel = new Scene(rootCancel);
-        } catch (IOException e) {
+        }
+        catch (IOException e)
+        {
             // Handle any potential FXML loading exceptions here
             e.printStackTrace();
         }
@@ -46,13 +54,16 @@ public class App extends Application {
     }
 
     // Method for passing a reference to the data object
-    public static DataHandler getDataHandler() {
+    public static DataHandler getDataHandler()
+    {
         return data;
     }
 
     // Method for switching scenes
-    public static void changeScene(int sc) {
-        switch (sc) {
+    public void changeScene(int sc) throws IOException
+    {
+        switch (sc)
+        {
             case 0:
                 stage.setScene(sceneMain);
                 break;
@@ -60,10 +71,11 @@ public class App extends Application {
                 stage.setScene(sceneEnter);
                 break;
             case 2:
+                sceneView = new Scene(loadViewScene());
                 stage.setScene(sceneView);
                 break;
             case 3:
-                sceneView = loadViewScene();
+                stage.setScene(sceneCancel);
                 break;
             default:
                 break;
@@ -75,14 +87,15 @@ public class App extends Application {
     {
         return FXMLLoader.load(getClass().getResource("viewBooking.fxml"));
     }
-        
 
     // Method for exiting the application
-    public static void exit() {
+    public static void exit()
+    {
         stage.close();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         launch(args);
     }
 }

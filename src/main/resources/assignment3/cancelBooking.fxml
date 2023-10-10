@@ -40,24 +40,24 @@
                   <Insets left="20.0" />
                </GridPane.margin>
             </Text>
-            <TextArea prefHeight="53.0" prefWidth="293.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextArea fx:id="bookingTextArea" editable="false" prefHeight="53.0" prefWidth="293.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets right="20.0" />
                </GridPane.margin>
             </TextArea>
-            <Button fx:id="backButton" onAction="#handleBackButton" mnemonicParsing="false" prefHeight="45.0" prefWidth="151.0" text="Back to Homepage" GridPane.rowIndex="4">
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="45.0" prefWidth="151.0" text="Back to Homepage" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets left="20.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="cancelButton" onAction="#handleCancelButton" mnemonicParsing="false" prefHeight="45.0" text="Cancel Booking" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#handleCancelButton" prefHeight="45.0" text="Cancel Booking" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="bookingNumberField" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="60.0" right="20.0" />
                </GridPane.margin>
             </TextField>
-            <Button fx:id="searchButton" onAction="#handleSearchButton" mnemonicParsing="false" text="Search" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <CheckBox mnemonicParsing="false" text="Confirm booking for cancelation " GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button fx:id="searchButton" mnemonicParsing="false" onAction="#handleSearchButton" text="Search" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <CheckBox fx:id="confirmCheckBox" mnemonicParsing="false" text="Confirm booking for cancelation " GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
    </children>

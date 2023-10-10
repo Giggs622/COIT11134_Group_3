@@ -1,7 +1,10 @@
+// Programmers: Lochlain Cathcart 12127289; Matt Jones S0201735; William Korger 12151970
+// File: ViewBookingController.java
+// Date: 7 Sept 2023
+// Purpose: COIT11134 Assignment 3
+
 package assignment3;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -11,14 +14,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
-import javafx.scene.layout.Pane;
-import javafx.scene.text.Text;
 
-public class ViewBookingController implements Initializable {
-
+public class ViewBookingController implements Initializable
+{
+    // Delcare the instance variables
     private DataHandler datahandler;
     private ArrayList<Passenger> passengerList;
-    
+    private App app;
+
     @FXML
     private TextArea textArea;
 
@@ -26,22 +29,15 @@ public class ViewBookingController implements Initializable {
     private Button backButton;
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        /* Read the "passenger.txt" file and display its content in the TextArea
-        try (BufferedReader reader = new BufferedReader(new FileReader("passenger.txt"))) {
-            StringBuilder content = new StringBuilder();
-            String line;
-            while ((line = reader.readLine()) != null) {
-                content.append(line).append("\n");
-            }
-            textArea.setText(content.toString());
-        } catch (IOException ex) {
-            System.err.println("Error reading the file: " + ex.getMessage());
-        }*/
+    public void initialize(URL url, ResourceBundle rb)
+    {
+        // Create object reference to datahandler in main class
+        app = new App();
         // Create object reference to datahandler in main class
         datahandler = App.getDataHandler();
-        passengerList = data.getArrayList();
-        
+        // Get ArrayList from DataHandler
+        passengerList = datahandler.getArrayList();
+
         // Print the bookings to the text area
         StringBuilder content = new StringBuilder("");
         for (Passenger p : passengerList)
@@ -53,11 +49,10 @@ public class ViewBookingController implements Initializable {
     }
 
     @FXML
-    private void handleBackButton(ActionEvent event) {
+    private void handleBackButton(ActionEvent event) throws IOException
+    {
         System.out.println("Exit to Main Menu");
         // Switch to the Main Menu scene
-        App.changeScene(0);
-        
-        //textArea.clear();
+        app.changeScene(0);
     }
 }

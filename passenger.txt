@@ -1,2 +1,3 @@
-2,a,a,a,a,Economy,Perth,
-2,01/01/2023,John Smith,j.smith@outlook.com,0415778965,Business,Sydney,
+3,30/09/2077,Jill,jill@food.com,8141++6511+56,First Class,Perth,
+4,02/03/2015,John,john@yahoo.com,18898651651,First Class,Sydney,
+5,10/02/2065,Bob,bob@bobmail.com,15156+1565,Economy,Sydney,
