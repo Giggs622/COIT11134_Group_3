@@ -27,12 +27,12 @@ public class App extends Application {
         try {
             Parent rootMain = FXMLLoader.load(getClass().getResource("passengerBooking.fxml"));
             Parent rootEnter = FXMLLoader.load(getClass().getResource("enterBooking.fxml"));
-            Parent rootView = FXMLLoader.load(getClass().getResource("viewBooking.fxml"));
+            //Parent rootView = FXMLLoader.load(getClass().getResource("viewBooking.fxml"));
             Parent rootCancel = FXMLLoader.load(getClass().getResource("cancelBooking.fxml"));
 
             sceneMain = new Scene(rootMain);
             sceneEnter = new Scene(rootEnter);
-            sceneView = new Scene(rootView);
+            //sceneView = new Scene(rootView);
             sceneCancel = new Scene(rootCancel);
         } catch (IOException e) {
             // Handle any potential FXML loading exceptions here
@@ -63,12 +63,19 @@ public class App extends Application {
                 stage.setScene(sceneView);
                 break;
             case 3:
-                stage.setScene(sceneCancel);
+                sceneView = loadViewScene();
                 break;
             default:
                 break;
         }
     }
+
+    // Method to load ViewBooking JavaFX scene
+    private Parent loadViewScene() throws IOException
+    {
+        return FXMLLoader.load(getClass().getResource("viewBooking.fxml"));
+    }
+        
 
     // Method for exiting the application
     public static void exit() {
