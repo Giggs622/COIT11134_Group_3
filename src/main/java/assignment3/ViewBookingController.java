@@ -16,8 +16,8 @@ import javafx.scene.text.Text;
 
 public class ViewBookingController implements Initializable {
 
-    //private DataHandler datahandler;
-    //private ArrayList<Passenger> passengerList;
+    private DataHandler datahandler;
+    private ArrayList<Passenger> passengerList;
     
     @FXML
     private TextArea textArea;
@@ -39,24 +39,8 @@ public class ViewBookingController implements Initializable {
             System.err.println("Error reading the file: " + ex.getMessage());
         }*/
         // Create object reference to datahandler in main class
-        //datahandler = App.getDataHandler();
-    }
-
-    @FXML
-    private void handleBackButton(ActionEvent event) {
-        System.out.println("Exit to Main Menu");
-        // Switch to the Main Menu scene
-        App.changeScene(0);
-        
-        textArea.clear();
-    }
-    
-    // Read stored passenger records and print to text area
-    public static void printRecords(ArrayList<Passenger> passengerList)
-    {
-        // Create object reference to datahandler in main class
-        //datahandler = App.getDataHandler();
-        //passengerList = data.getArrayList();
+        datahandler = App.getDataHandler();
+        passengerList = data.getArrayList();
         
         // Print the bookings to the text area
         StringBuilder content = new StringBuilder("");
@@ -66,5 +50,14 @@ public class ViewBookingController implements Initializable {
         }
         System.out.println(content.toString());
         textArea.setText(content.toString());
+    }
+
+    @FXML
+    private void handleBackButton(ActionEvent event) {
+        System.out.println("Exit to Main Menu");
+        // Switch to the Main Menu scene
+        App.changeScene(0);
+        
+        //textArea.clear();
     }
 }
